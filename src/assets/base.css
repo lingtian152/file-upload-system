@@ -1,0 +1,108 @@
+/* ------------------ 基础色调 ------------------ */
+:root {
+  --vt-c-white: #fefefe;
+  --vt-c-white-soft: #f4f4f4;
+  --vt-c-white-mute: #e8e8e8;
+
+  --vt-c-black: #1e1e1e;
+  --vt-c-black-soft: #2a2a2a;
+  --vt-c-black-mute: #333333;
+
+  --vt-c-indigo: #3a6ea5; /* 主色柔和蓝 */
+
+  --vt-c-divider-light-1: rgba(50, 50, 50, 0.2);
+  --vt-c-divider-light-2: rgba(50, 50, 50, 0.1);
+  --vt-c-divider-dark-1: rgba(100, 100, 100, 0.6);
+  --vt-c-divider-dark-2: rgba(100, 100, 100, 0.4);
+
+  --vt-c-text-light-1: #2c3e50;
+  --vt-c-text-light-2: rgba(60, 60, 60, 0.6);
+  --vt-c-text-dark-1: #e0e0e0;
+  --vt-c-text-dark-2: #fff;
+}
+
+/* ------------------ 语义化颜色 ------------------ */
+:root {
+  --color-background: var(--vt-c-white-soft);
+  --color-background-soft: var(--vt-c-white);
+  --color-background-mute: var(--vt-c-white-mute);
+
+  --color-border: var(--vt-c-divider-light-2);
+  --color-border-hover: var(--vt-c-divider-light-1);
+
+  --color-heading: var(--vt-c-text-light-1);
+  --color-text: var(--vt-c-text-light-1);
+
+  --section-gap: 160px;
+}
+
+/* ------------------ 暗黑模式 ------------------ */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: var(--vt-c-black-soft);
+    --color-background-soft: var(--vt-c-black);
+    --color-background-mute: var(--vt-c-black-mute);
+
+    --color-border: var(--vt-c-divider-dark-2);
+    --color-border-hover: var(--vt-c-divider-dark-1);
+
+    --color-heading: var(--vt-c-text-dark-1);
+    --color-text: var(--vt-c-text-dark-2);
+  }
+}
+
+.dark {
+  --color-background: var(--vt-c-black-soft);
+  --color-background-soft: var(--vt-c-black);
+  --color-background-mute: var(--vt-c-black-mute);
+  --color-border: var(--vt-c-divider-dark-2);
+  --color-border-hover: var(--vt-c-divider-dark-1);
+  --color-heading: var(--vt-c-text-dark-1);
+  --color-text: var(--vt-c-text-dark-2);
+}
+
+.light {
+  --color-background: var(--vt-c-white-soft);
+  --color-background-soft: var(--vt-c-white);
+  --color-background-mute: var(--vt-c-white-mute);
+  --color-border: var(--vt-c-divider-light-2);
+  --color-border-hover: var(--vt-c-divider-light-1);
+  --color-heading: var(--vt-c-text-light-1);
+  --color-text: var(--vt-c-text-light-1);
+}
+
+/* ------------------ 全局样式 ------------------ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--color-background);
+  transition:
+    color 0.4s,
+    background-color 0.4s;
+  line-height: 1.6;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
